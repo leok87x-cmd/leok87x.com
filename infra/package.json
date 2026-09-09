@@ -1,0 +1,22 @@
+{
+  "name": "leok87x-site-infra",
+  "private": true,
+  "version": "0.1.0",
+  "description": "CDK stack for www.leok87x.com static site",
+  "scripts": {
+    "synth": "cdk synth",
+    "diff": "cdk diff",
+    "deploy": "cdk deploy --require-approval never",
+    "destroy": "cdk destroy"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "aws-cdk": "2.1140.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.268.0",
+    "constructs": "^10.4.0"
+  }
+}
