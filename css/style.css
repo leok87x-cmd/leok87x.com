@@ -1,19 +1,20 @@
 /* ---------- tokens ---------- */
+/* TechStone brand: monochrome. Ink #020205, paper #f2f4f7. No accent hue. */
 :root {
-  --bg: #0b0d12;
-  --bg-elev: #12151c;
-  --bg-card: #151923;
-  --line: #232838;
-  --line-strong: #2f3548;
-  --fg: #e8eaf0;
-  --fg-muted: #9aa3b5;
-  --fg-dim: #6b7386;
-  --accent: #f5b342;
-  --accent-2: #ff7a59;
-  --accent-ink: #0b0d12;
-  --grid: rgba(255, 255, 255, 0.035);
-  --glow: rgba(245, 179, 66, 0.18);
+  --bg: #020205;
+  --bg-elev: #0a0a0e;
+  --bg-card: #0e0e13;
+  --line: #1e1e25;
+  --line-strong: #2e2e37;
+  --fg: #f2f4f7;
+  --fg-muted: #a4a7b0;
+  --fg-dim: #6e717b;
+  --accent: #f2f4f7;
+  --accent-ink: #020205;
+  --grid: rgba(242, 244, 247, 0.045);
+  --glow: rgba(242, 244, 247, 0.09);
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Poppins", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --max: 1080px;
   --radius: 14px;
@@ -22,19 +23,18 @@
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --bg: #f7f7f5;
+    --bg: #f2f4f7;
     --bg-elev: #ffffff;
     --bg-card: #ffffff;
-    --line: #e4e4df;
-    --line-strong: #cfcfc7;
-    --fg: #14161c;
-    --fg-muted: #4f5566;
-    --fg-dim: #8a8f9c;
-    --accent: #c77d00;
-    --accent-2: #d9472b;
-    --accent-ink: #ffffff;
-    --grid: rgba(0, 0, 0, 0.045);
-    --glow: rgba(199, 125, 0, 0.14);
+    --line: #dfe2e8;
+    --line-strong: #c3c7cf;
+    --fg: #020205;
+    --fg-muted: #4a4d57;
+    --fg-dim: #82858e;
+    --accent: #020205;
+    --accent-ink: #f2f4f7;
+    --grid: rgba(2, 2, 5, 0.055);
+    --glow: rgba(2, 2, 5, 0.06);
     color-scheme: light;
   }
 }
@@ -79,6 +79,7 @@ h1,
 h2,
 h3 {
   margin: 0;
+  font-family: var(--font-display);
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
@@ -148,22 +149,17 @@ section h2 {
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  font-weight: 600;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 700;
   letter-spacing: -0.01em;
 }
 
 .brand .mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  display: grid;
-  place-items: center;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 0.8rem;
+  width: 26px;
+  height: 30px;
+  color: var(--fg);
+  flex-shrink: 0;
 }
 
 .nav-links {
@@ -181,7 +177,8 @@ section h2 {
 }
 
 .nav-links .cta {
-  color: var(--accent);
+  color: var(--fg);
+  font-weight: 500;
 }
 
 @media (max-width: 640px) {
@@ -222,7 +219,9 @@ section h2 {
 }
 
 .hero h1 .accent {
-  color: var(--accent);
+  color: transparent;
+  -webkit-text-stroke: 2px var(--fg);
+  paint-order: stroke fill;
 }
 
 .hero .tagline {
@@ -250,8 +249,8 @@ section h2 {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #3ecf8e;
-  box-shadow: 0 0 0 4px rgba(62, 207, 142, 0.18);
+  background: var(--fg);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--fg) 18%, transparent);
 }
 
 .actions {
@@ -442,8 +441,9 @@ section h2 {
   display: grid;
   place-items: center;
   margin-bottom: 0.8rem;
-  background: color-mix(in srgb, var(--accent) 16%, transparent);
-  color: var(--accent);
+  background: color-mix(in srgb, var(--fg) 10%, transparent);
+  border: 1px solid var(--line-strong);
+  color: var(--fg);
 }
 
 .card .icon svg {
